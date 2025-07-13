@@ -1,6 +1,7 @@
 import os
 
 import logfire
+import agents
 
 
 def logfire_init():
@@ -14,3 +15,4 @@ def logfire_init():
 
     logfire.configure(token=token)
     logfire.instrument_openai()
+    agents.set_tracing_disabled(True)
