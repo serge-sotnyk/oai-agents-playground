@@ -56,7 +56,8 @@ def main():
         input=input_data,
     )
 
-    out_md_name = file_to_process.with_suffix(".md")
+    model_suffix = model_name.replace("/", "_")
+    out_md_name = file_to_process.with_suffix(f".{model_suffix}.md")
     out_md_name.write_text(result.final_output.content, encoding="utf-8")
     print(f"Markdown content saved to {out_md_name}")
 
